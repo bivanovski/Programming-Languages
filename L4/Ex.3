@@ -1,0 +1,18 @@
+import java.util.Scanner; 
+
+public class Console {
+
+	public static void main(String[] args) {
+		
+        Scanner scan = new Scanner(System.in);
+        int input = scan.nextInt();
+        
+        System.out.println("Decimal: " + input);
+        System.out.println("Binary: " + Integer.toBinaryString(input));
+        System.out.println("Octal: " + Integer.toOctalString(input));
+        System.out.println("Hexadecimal: " + Integer.toHexString(input));
+        
+        
+	}
+
+}
