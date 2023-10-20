@@ -1,0 +1,33 @@
+
+public class Strings {
+
+	public static void main(String[] args) {
+		String value = "Computer";
+		String value2 = value.substring(0, 2);
+		
+		int len = value.length();
+		
+		System.out.println("Original: " + value);
+		System.out.println("In capital letters " + value.toUpperCase());
+		System.out.println("In small letters " + value.toLowerCase());
+		System.out.println("Length: " + value.length());
+		System.out.println("First letter:" + value.charAt(0));
+		System.out.println("Middle letter: " + value.charAt(len/2));
+		System.out.println("Last letter " + value.charAt(len-1));
+		System.out.println("The word starts with 'Com' " + value.startsWith("Com"));
+		System.out.println("The word end with 'ion' " + value.endsWith("ion"));
+		System.out.println("The first two letters are: " + value2);
+		System.out.println("Swapping 'e' with 'o': " + value.replace("e", "o"));
+		System.out.println("Swapping 'e' with 'o': " + value.replace("Compu", "Calcula"));
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
