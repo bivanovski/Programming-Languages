@@ -1,0 +1,61 @@
+public class Exercise1 {
+	
+	static class Egg {
+		 int category;
+		 
+		 public Egg(int c)
+		 {
+			 category = c;
+		 }
+		 
+		 public int getCategory()
+		 {
+			 return category;
+		 }
+		 
+		public static void egg()
+		{
+			System.out.println("Each egg has an aalbumen and a yolk");
+		}
+		
+		public static void print()
+		{
+			System.out.println("The egg is a nutritional product");
+		}
+	}
+	
+	static class Ostrich_Egg extends Egg{
+		
+	   public Ostrich_Egg(int c)
+		{
+			super(c);
+		}
+		
+		public static void egg()
+		{
+			System.out.println("The albumen and the ostrich egg are the largest");
+		}
+		
+		
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("For the hen egg: ");
+		Egg henegg = new Egg(1);
+		henegg.print();
+		henegg.egg();
+		System.out.println("The category of this egg is: " + henegg.getCategory());
+		
+		System.out.println("For the ostrich egg: ");
+		Ostrich_Egg os = new Ostrich_Egg(2);
+		os.egg();
+		os.print();
+		System.out.println("The category of this egg is: " + os.getCategory());
+		
+		
+		
+
+	}
+
+}
