@@ -1,0 +1,42 @@
+
+public class BojanIvanovski5435_Ass1 {
+
+	public static void main(String[] args) {
+		String arr[] = new String[6];
+		int min = 0;
+		for(int i=1; i<6; i++)
+		{
+				System.out.println(args[i]);
+				
+				
+				if(min > Integer.parseInt(args[i]))
+				{
+					min = Integer.parseInt(args[i]);
+					
+				}
+		}
+		
+		System.out.println("The min is: " + min);
+		
+		int max = 0;
+		for(int i=1; i<6; i++)
+		{
+				System.out.println(args[i]);
+				
+				
+				if(max < Integer.parseInt(args[i]))
+				{
+					max = Integer.parseInt(args[i]);
+					
+				}
+		}
+		
+		System.out.println("The max is: " + max);
+		
+		
+		
+		
+
+	}
+
+}
