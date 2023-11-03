@@ -1,0 +1,97 @@
+class Player {
+	String name;
+	int points;
+	String team;
+	
+	public Player(String name, String team) {
+		this.name = name;
+		this.team = team;
+		this.points = (int) (Math.random()*100) % 50;
+	}
+	
+	public Player() {}
+	
+	void setName(String n) {
+		name = n;
+	}
+	
+	String getName()
+	{
+		return name;
+	}
+	
+	void setPoints(int p)
+	{
+		points = p;
+	}
+	
+	int getPoints () {
+		return points;
+	}
+	
+	Player Mvp(Player arr[]) {
+		int max = 0;
+		Player mvpPlayer = new Player();
+		for(int i=0; i<arr.length; i++)
+		{
+			if(arr[i].getPoints() > max)
+			{
+				mvpPlayer = arr[i];
+				return arr[i];
+			}
+		}
+		return mvpPlayer;
+	}
+	
+}
+
+public class BojanIvanovski5435_Ass2 {
+
+	public static void main(String[] args) {
+		
+		Player Miami[] = new Player [5];
+		Player Orlando[] = new Player [5];
+		
+		Miami[0] = new Player("x", "Miami");
+		Miami[1] = new Player("y", "Miami");
+		Miami[2] = new Player("z", "Miami");
+		Miami[3] = new Player("k", "Miami");
+		Miami[4] = new Player("f", "Miami");
+		
+	    Orlando[0] = new Player("e", "Orlando");
+		Orlando[1] = new Player("d", "Orlando");
+		Orlando[2] = new Player("l", "Orlando");
+		Orlando[3] = new Player("o", "Orlando");
+		Orlando[4] = new Player("a", "Orlando");
+		
+		int result1 = 0;
+		int result2 = 0;
+		
+		for(int i=0; i<4; i++)
+		{
+			System.out.println("The player " + Miami[i].getName() + " has scored " + Miami[i].getPoints());
+			result1 = result1 + Miami[i].getPoints();
+		}
+		
+		System.out.println();
+		
+		for(int i=0; i<4; i++)
+		{
+			System.out.println("The player " + Orlando[i].getName() + " has scored " + Orlando[i].getPoints());
+			result2 = result2 + Orlando[i].getPoints();
+		}
+		
+		System.out.println();
+		
+		System.out.println("Miami Heat : Orlando Magic " + result1 + " " + result2);
+		
+		System.out.println();
+		
+		if(result1 > result2) {
+			System.out.println("Miami Heat is the winner");
+		} else
+			System.out.println("Orlando Magic is the winner");
+
+	}
+
+}
