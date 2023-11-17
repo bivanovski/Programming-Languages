@@ -1,0 +1,82 @@
+interface average {
+	double avg();
+}
+
+interface scholarship {
+	double rate();
+}
+
+class person {
+	String name;
+	person(String name)
+	{
+		this.name = name;
+	}
+}
+
+class employee extends person implements average {
+    int salaries;
+    int salary[] = new int[12];
+    
+    employee(String name, int n)
+    {
+    	super(name);
+    	salaries = n;
+    	
+    }
+	@Override
+	public double avg() { 
+		double temp = 0;
+		for(int i=0; i<this.salary.length; i++)
+		{
+			
+			temp = (salary[i]/salaries);
+		}
+		return temp;
+	}
+	
+}
+
+class student extends person implements average, scholarship {
+	int grades;
+	employee parent1;
+	employee parent2;
+	int grade[] = new int[6];
+	
+	student(String name, int n, employee r1, employee r2)
+	{
+		super(name);
+		this.grades = n;
+		this.parent1.equals(r1);
+		this.parent2.equals(r2);
+	}
+
+	@Override
+	public double rate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double avg() {
+		double temp = 0;
+		for(int i=0; i<this.grade.length; i++)
+		{
+			temp = (grade[i]/grades);
+		}
+		return temp;
+	}
+}
+
+
+
+
+
+public class Exercise2 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
