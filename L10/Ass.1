@@ -1,0 +1,95 @@
+
+public class Student {
+
+	String name;
+	int indexNo;
+	int age;
+	
+	public void setName(String n) {
+		this.name = n;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setIndexNo(int index) {
+		this.indexNo = index;
+	}
+	
+	public int getIndexNo() {
+		return indexNo;
+	}
+	
+	public void setAge(int a)
+	{
+		this.age = a;
+	}
+	
+	public int getAge()
+	{
+		return age;
+	}
+	
+	public Student withName(String name)
+	{
+		this.name = name;
+		return this;
+	}
+	
+	public Student withIndexNo(int indexNo)
+	{
+		this.indexNo = indexNo;
+		return this;
+	}
+	
+	public Student withAge(int age)
+	{
+		this.age = age;
+		return this;
+	}
+	
+	public Student createStudent(String name, int indexNo, int age)
+	{
+		return createStudent(name, indexNo, age);
+		
+	}
+	
+	public Student(String name, int indexNo, int age) {
+		super();
+		this.name = name;
+		this.indexNo = indexNo;
+		this.age = age;
+	}
+
+}
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Demo {
+	public static Student createStudent(String name, int indexNo, int age)
+	{
+		return new Student(name, indexNo, age);
+		
+	}
+	
+	public static void printValues(Student s)
+	{
+		System.out.println("Name: " + s.name);
+		System.out.println("Index no: " + s.indexNo);
+		System.out.println("Age: " + s.age);
+	} 
+	public static void main(String[] args) {
+		List<String> listofNames = Arrays.asList("Bojan", "Marko", "Filip", "Borjan", "Martin");
+		List<Student> all = new ArrayList<>();
+		List<Boolean> result = listofNames.stream().map(s -> all.add(createStudent(s, 1, 2))).collect(Collectors.toList());
+		for(Student student : all) {
+			printValues(student);
+		}
+		
+	}
+
+}
