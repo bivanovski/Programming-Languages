@@ -1,0 +1,67 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ex2 {
+
+	public static void main(String[] args) {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader input = new BufferedReader(isr);
+		
+	    
+	    try {
+	    	// Input dimensions of the two-dimensional list
+            System.out.println("Enter the number of rows for the list: ");
+            int rows = Integer.parseInt(input.readLine());
+
+            System.out.println("Enter the number of columns for the list: ");
+            int columns = Integer.parseInt(input.readLine());
+
+            // Create the two-dimensional list
+            List<List<Integer>> list = new ArrayList<>();
+
+            // Input integer elements for the list
+            System.out.println("Enter the elements of the list:");
+
+            for (int i = 0; i < rows; i++) {
+                List<Integer> row = new ArrayList<>();
+                for (int j = 0; j < columns; j++) {
+                    System.out.print("Enter element at position [" + i + "][" + j + "]: ");
+                    row.add(Integer.parseInt(input.readLine()));
+                }
+                list.add(row);
+            }
+
+            // Display the entered list
+            System.out.println("Entered two-dimensional list:");
+
+            int sum = 0;
+            int count = 0;
+
+            for (List<Integer> row : list) {
+                for (Integer element : row) {
+                    System.out.print(element + "\t");
+                    sum += element;
+                    count++;
+                }
+                System.out.println();
+            }
+
+            // Calculate and display the sum and average
+            double average = (count > 0) ? (double) sum / count : 0;
+            System.out.println("Sum of elements: " + sum);
+            System.out.println("Average of elements: " + average);
+			
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Exception!");
+			e.printStackTrace();
+			
+		}
+	    
+
+	}
+
+}
