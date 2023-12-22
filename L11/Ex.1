@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Ex1 {
+
+	public static void main(String[] args) {
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader input = new BufferedReader(isr);
+		
+		
+		try {
+			System.out.println("What is your name? ");
+			String name = input.readLine();
+			System.out.println("Which year you were born? ");
+			int year = Integer.parseInt(input.readLine());
+			System.out.println("How tall are you?");
+			double height = Double.parseDouble(input.readLine());
+			System.out.println("What is your weight?");
+			double weight = Double.parseDouble(input.readLine());
+			
+			double bmi = weight/ (Math.pow(height,2));
+			System.out.println("Name: " + name);
+			System.out.println("This year you will turn" + (2022-year));
+			System.out.println("Your body-mass index is: " + bmi);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+
+	}
+
+}
